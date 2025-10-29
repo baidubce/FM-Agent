@@ -41,7 +41,7 @@ FM Agent reaches state-of-the-art results autonomously, without human interpreta
 <img src="docs/images/alebench_result.png" width="500" height="500"/> 
 
 ### KernelBench
-<img src="docs/images/kernelbench_result.png" width="500" height="500""/> 
+<img src="docs/images/kernelbench_result.png" width="500" height="500"/> 
 
 
 
