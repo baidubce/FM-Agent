@@ -8,7 +8,7 @@
 
 <a href="https://console.bce.baidu.com/qianfan/modelcenter/model/buildIn/list" style="vertical-align:middle;"><img src="docs/images/ACG.png" alt="ModelBuilder" width="16" height="16" style="vertical-align:middle;"/> **ModelBuilder**</a>
 
-📄 **[Tech Report](https://github.com/baidubce/Qianfan-VL/blob/main/docs/qianfan_vl_report_comp.pdf)**
+📄 **[Tech Report](https://github.com/baidubce/FM-Agent/blob/main/docs/FMAgent_TechReport.pdf)**
 
 </div>
 
