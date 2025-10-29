@@ -35,13 +35,13 @@ Built on Ray, our scalable orchestration framework enables fine-grained, large-s
 FM Agent reaches state-of-the-art results autonomously, without human interpretation or tuning — 1976.3 on ALE-Bench (+5.2%), 43.56% on MLE-Bench (+4.0pp), up to 20× speedups on KernelBench, and establishes new state-of-the-art(SOTA) results on several classical mathematical problems.
 
 ### MLE-Bench
-<img src="docs/images/mlebench_result.png" width="50" height="50"/> 
+<img src="docs/images/mlebench_result.png" width="500" height="500"/> 
 
 ### ALE-Bench
-<img src="docs/images/alebench_result.png" width="50" height="50"/> 
+<img src="docs/images/alebench_result.png" width="500" height="500"/> 
 
 ### KernelBench
-<img src="docs/images/kernelbench_result.png width="50" height="50""/> 
+<img src="docs/images/kernelbench_result.png" width="500" height="500""/> 
 
 
 
