@@ -1,3 +1,7 @@
+<div align="right">
+  <a href="README_CN.md">简体中文</a> | <b>English</b>
+</div>
+
 <h1 align="center">FM-Agent</h1>
 
 <div align="center">
