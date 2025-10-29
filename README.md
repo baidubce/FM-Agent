@@ -32,7 +32,7 @@ Built on Ray, our scalable orchestration framework enables fine-grained, large-s
   
 
 ## Performance Metrics
-FM Agent reaches state-of-the-art results autonomously, without human interpretation or tuning — 1976.3 on ALE-Bench (+5.2%), 43.56% on MLE-Bench (+4.0pp), up to 20× speedups on KernelBench, and establishes new state-of-the-art(SOTA) results on several classical mathematical problems.
+FM Agent reaches state-of-the-art results autonomously, without human interpretation or tuning — **1976.3** on ALE-Bench (+5.2%), **43.56**% on MLE-Bench (+4.0pp), up to **20×** speedups on KernelBench, and establishes new state-of-the-art(SOTA) results on several classical mathematical problems.
 
 ### MLE-Bench
 <img src="docs/images/mlebench_result.png" width="500" height="500"/> 
