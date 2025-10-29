@@ -13,7 +13,7 @@
 
 
 <p align="center">
-  <img src="docs/images/main.png" width="500" height="500"/>
+  <img src="docs/images/main.png" width="700" height="700"/>
 </p>
  
 ## Introduction
