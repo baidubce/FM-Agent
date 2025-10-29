@@ -11,7 +11,6 @@
 
 </div>
 
----
 
 <p align="center">
   <img src="docs/images/main.png" width="500" height="500"/>
