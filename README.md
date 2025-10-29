@@ -13,6 +13,8 @@
 
 ---
 
+<img src="docs/images/main.png" width="500" height="500"/> 
+
 ## Introduction
 FM Agent is a novel, general-purpose multi-agent framework that addresses complex real-world challenges by synergistically combining LLM-based reasoning and large-scale evolutionary search. Demonstrating broad applicability, our system has been evaluated across diverse domains, including operations research, machine learning, GPU kernel optimization, and classical mathematical problems.
 
