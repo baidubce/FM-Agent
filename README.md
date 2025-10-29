@@ -13,8 +13,8 @@
 
 ---
 
-<img src="docs/images/main.png" width="500" height="500"/> 
-
+<img src="docs/images/main.png" width="500" height="500" style="vertical-align:middle;"/> 
+ 
 ## Introduction
 FM Agent is a novel, general-purpose multi-agent framework that addresses complex real-world challenges by synergistically combining LLM-based reasoning and large-scale evolutionary search. Demonstrating broad applicability, our system has been evaluated across diverse domains, including operations research, machine learning, GPU kernel optimization, and classical mathematical problems.
 
@@ -32,18 +32,19 @@ Custom evaluators synthesize multiple critical criteria—including functional c
 ### 🚀 Distributed Asynchronous Infrastructure
 Built on Ray, our scalable orchestration framework enables fine-grained, large-scale concurrent evaluation across distributed computing resources. This architecture ensures efficient resource utilization while facilitating rapid and systematic exploration of complex, high-dimensional solution spaces.
   
-
 ## Performance Metrics
 FM Agent reaches state-of-the-art results autonomously, without human interpretation or tuning — **1976.3** on ALE-Bench (+5.2%), **43.56**% on MLE-Bench (+4.0pp), up to **20×** speedups on KernelBench, and establishes new state-of-the-art(SOTA) results on several classical mathematical problems.
 
-### MLE-Bench
-<img src="docs/images/mlebench_result.png" width="500" height="500"/> 
+### MLE-Bench 
+FM-Agent is currently ranked first on the [MLEbench Leaderboard](https://github.com/openai/mle-bench?tab=readme-ov-file).
+
+<img src="docs/images/mlebench_result.png" width="500" height="500" style="vertical-align:middle;"/> 
 
 ### ALE-Bench
-<img src="docs/images/alebench_result.png" width="500" height="500"/> 
+<img src="docs/images/alebench_result.png" width="500" height="500" style="vertical-align:middle;"/> 
 
 ### KernelBench
-<img src="docs/images/kernelbench_result.png" width="500" height="500"/> 
+<img src="docs/images/kernelbench_result.png" width="500" height="500" style="vertical-align:middle;"/> 
 
 
 
