@@ -35,16 +35,25 @@ Built on Ray, our scalable orchestration framework enables fine-grained, large-s
 ## Performance Metrics
 FM Agent reaches state-of-the-art results autonomously, without human interpretation or tuning — **1976.3** on ALE-Bench (+5.2%), **43.56**% on MLE-Bench (+4.0pp), up to **20×** speedups on KernelBench, and establishes new state-of-the-art(SOTA) results on several classical mathematical problems.
 
-### MLE-Bench 
-FM-Agent is currently ranked first on the [MLEbench Leaderboard](https://github.com/openai/mle-bench?tab=readme-ov-file).
+### MLE-Bench
+<p align="center">
+  💥💥💥FM-Agent is currently ranked first on the [MLEbench Leaderboard](https://github.com/openai/mle-bench?tab=readme-ov-file).
+  <img src="docs/images/mlebench_result.png" width="500" height="500"/>
+</p>
 
-<img src="docs/images/mlebench_result.png" width="500" height="500" style="vertical-align:middle;"/> 
+---
 
 ### ALE-Bench
-<img src="docs/images/alebench_result.png" width="500" height="500" style="vertical-align:middle;"/> 
+<p align="center">
+  <img src="docs/images/alebench_result.png" width="500" height="500"/>
+</p>
+
+---
 
 ### KernelBench
-<img src="docs/images/kernelbench_result.png" width="500" height="500" style="vertical-align:middle;"/> 
+<p align="center">
+  <img src="docs/images/kernelbench_result.png" width="500" height="500"/>
+</p>
 
 
 
