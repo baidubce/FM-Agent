@@ -7,7 +7,7 @@
 <div align="center">
 
 📄 **[技术报告](https://github.com/baidubce/FM-Agent/blob/main/docs/FMAgent_TechReport.pdf)** |
-<a href="https://console.bce.baidu.com/qianfan/modelcenter/model/buildIn/list" style="vertical-align:middle;"><img src="docs/images/ACG.png" alt="ModelBuilder" width="16" height="16" style="vertical-align:middle;"/> **ModelBuilder**</a>
+<a href="https://console.bce.baidu.com/qianfan/modelcenter/model/buildIn/list" style="vertical-align:middle;"><img src="docs/images/ACG.png" alt="ModelBuilder" width="16" height="16" style="vertical-align:middle;"/> **千帆ModelBuilder**</a>
 
 </div>
 
