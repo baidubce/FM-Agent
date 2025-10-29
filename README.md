@@ -28,7 +28,7 @@ This phase integrates  diverse generation agents to produce a broad yet high-qua
 ### 🧬 Adaptive Diversity-Driven Sampling
 Our novel sampling strategy orchestrates multiple parallel evolutionary islands, adaptively balancing exploration and exploitation through dynamic resource allocation. This mechanism maintains productive diversity across algorithmic lineages while systematically steering the population toward global optima.
 
-### Domain-Specific Evaluation
+### 🎯 Domain-Specific Evaluation
 Custom evaluators synthesize multiple critical criteria—including functional correctness, operational effectiveness, and LLM-supervised quality assessment—to generate nuanced, multi-faceted feedback. This comprehensive scoring mechanism provides rich, cumulative signals that precisely guide the iterative refinement process.
 
 ### 🚀 Distributed Asynchronous Infrastructure
