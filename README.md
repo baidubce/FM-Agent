@@ -2,7 +2,7 @@
   <a href="README_CN.md">简体中文</a> | <b>English</b>
 </div>
 
-<h1 align="center">FM-Agent</h1>
+<h1 align="center">FM Agent</h1>
 
 <div align="center">
 
@@ -37,7 +37,7 @@ Built on Ray, our scalable orchestration framework enables fine-grained, large-s
 FM Agent reaches state-of-the-art results autonomously, without human interpretation or tuning — **1976.3** on ALE-Bench (+5.2%), **43.56**% on MLE-Bench (+4.0pp), up to **20×** speedups on KernelBench, and establishes new state-of-the-art(SOTA) results on several classical mathematical problems.
 
 ### MLE-bench
-💥💥💥FM-Agent is currently ranked first on the [MLE-bench Leaderboard](https://github.com/openai/mle-bench?tab=readme-ov-file).
+💥💥💥FM Agent is currently ranked first on the [MLE-bench Leaderboard](https://github.com/openai/mle-bench?tab=readme-ov-file).
 <p align="center">
   <img src="docs/images/mlebench_result.png" width="500" height="500"/>
 </p>
