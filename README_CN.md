@@ -54,6 +54,21 @@ FM Agent 在无人为干预或调优的情况下，自主达到了最先进的�
   <img src="docs/images/kernelbench_result.png" width="500" height="500"/>
 </p>
 
+## 引用
+
+如果您在研究中使用了FM Agent，请引用：
+
+```bibtex
+@misc{li2025fmagent,
+      title={The FM Agent}, 
+      author={Annan Li and Chufan Wu and Zengle Ge and Yee Hin Chong and Zhinan Hou and Lizhe Cao and Cheng Ju and Jianmin Wu and Huaiming Li and Haobo Zhang and Shenghao Feng and Mo Zhao and Fengzhi Qiu and Rui Yang and Mengmeng Zhang and Wenyi Zhu and Yingying Sun and Quan Sun and Shunhao Yan and Danyu Liu and Dawei Yin and Dou Shen},
+      year={2025},
+      eprint={2510.26144},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2510.26144}, 
+}
+```
 
 ## 许可证
 
