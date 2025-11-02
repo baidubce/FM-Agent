@@ -34,7 +34,7 @@ FM Agent 是一种新颖的、通用的多智能体框架，它通过协同结�
 我们的可扩展编排框架基于 Ray 构建，支持在分布式计算资源上进行细粒度、大规模的并发评估。这种架构确保了高效的资源利用，同时促进了对复杂、高维解空间的快速而系统的探索。
   
 ## 性能指标
-FM Agent 在无人为干预或调优的情况下，自主达到了最先进的结果：在 ALE-Bench 上达到 1976.3 (+5.2%)，在 MLE-bench 上达到 43.56% (+4.0%)，在 KernelBench 上实现了高达 20 倍的加速，并在多个经典数学问题上建立了新的最先进结果。
+FM Agent 在无人为干预或调优的情况下，自主达到了最先进的结果：在 ALE-Bench 上达到 1976.3 (+5.2%)，在 MLE-bench 上达到 43.56% (+4.0pp)，在 KernelBench 上实现了高达 20 倍的加速，并在多个经典数学问题上建立了新的最先进结果。
 
 ### MLE-bench
 💥💥💥FM Agent is currently ranked first on the [MLE-bench Leaderboard](https://github.com/openai/mle-bench?tab=readme-ov-file).
