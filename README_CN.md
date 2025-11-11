@@ -2,7 +2,7 @@
   <b>简体中文</b> | <a href="README.md">English</a>
 </div>
 
-<h1 align="center">伐谋</h1>
+<h1 align="center">FM Agent</h1>
 
 <div align="center">
 
