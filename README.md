@@ -6,9 +6,9 @@
 
 <div align="center">
 
+🚩 <a href="https://cloud.baidu.com/product/famou.html" style="vertical-align:middle;"> **Official Website**</a> |
 📄 **[Tech Report](https://github.com/baidubce/FM-Agent/blob/main/docs/FMAgent_TechReport.pdf)** |
 📌  <a href="https://arxiv.org/pdf/2510.26144" style="vertical-align:middle;"> **Arxiv Link**</a> |
-🚩 <a href="https://cloud.baidu.com/product/famou.html" style="vertical-align:middle;"> **Official Website**</a> |
 <a href="https://cloud.baidu.com/" style="vertical-align:middle;"><img src="docs/images/ACG.png" alt="ModelBuilder" width="16" height="16" style="vertical-align:middle;"/> **Baidu AI Cloud**</a>
 </div>
 
