@@ -2,7 +2,7 @@
   <a href="README_CN.md">简体中文</a> | <b>English</b>
 </div>
 
-<h1 align="center">FM Agent</h1>
+<h1 align="center">FaMou Agent</h1>
 
 <div align="center">
 
