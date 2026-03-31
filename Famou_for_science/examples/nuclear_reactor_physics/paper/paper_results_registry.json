@@ -1,0 +1,70 @@
+{
+  "baselines": {
+    "fdm": {
+      "combined_score": 0.99997939578455,
+      "mean_pde_residual": 1.983937792031185e-05,
+      "mean_bc_residual": 7.652620720640902e-07,
+      "runtime_seconds": 1.0693669319152832,
+      "source": "baselines/fdm/results.json",
+      "status": "complete"
+    },
+    "truncated_analytical": {
+      "combined_score": 0.99946055407767,
+      "mean_pde_residual": 4.0442938544640257e-05,
+      "mean_bc_residual": 0.0004992941427531672,
+      "runtime_seconds": 0.0003368854522705078,
+      "source": "baselines/truncated/results.json",
+      "status": "complete"
+    },
+    "fem": {
+      "combined_score": 0.9999892021642873,
+      "mean_pde_residual": 9.921445065084825e-06,
+      "mean_bc_residual": 8.765072421222882e-07,
+      "runtime_seconds": 6.597496032714844,
+      "note": "FEM replacement: High-order FDM 4th-order, FEniCS unavailable",
+      "source": "baselines/fem/results.json",
+      "status": "complete"
+    },
+    "pinn": {
+      "combined_score": 0.9472680534575955,
+      "mean_pde_residual": 0.04583513080168869,
+      "mean_bc_residual": 0.009832265929288627,
+      "runtime_seconds": 5.557313919067383,
+      "architecture": "[2, 40, 40, 2]",
+      "n_steps": 3000,
+      "source": "baselines/pinn/results.json",
+      "status": "complete"
+    },
+    "high_order_fdm": {
+      "combined_score": 0.99999,
+      "pde_residual": 9.92e-6,
+      "bc_residual": 8.77e-7,
+      "runtime_s": 6.597,
+      "source": "baselines/fem/results.json",
+      "note": "Implemented as 4th-order FDM (FEniCS unavailable)"
+    }
+  },
+  "convergence_analysis": {
+    "source": "scripts/analysis/convergence_data.json",
+    "fourier_N30": {
+      "combined_score": 0.9999580984283447,
+      "pde_residual_l2": 4.1425179896719365e-05,
+      "bc_residual_l2": 3.11573212334302e-05
+    },
+    "best_N50": {
+      "combined_score": 0.999972381394076,
+      "pde_residual_l2": 4.1425179896719365e-05,
+      "bc_residual_l2": 6.97072238714396e-06
+    },
+    "famou_evaluator_init_score": 0.9989,
+    "note": "famou evaluator uses S=1/(1+mean_pde+mean_bc), differs from convergence_data L2 metric",
+    "status": "complete"
+  },
+  "famou": {
+    "combined_score": null,
+    "source": "famou/task1/init.py",
+    "note": "Public snapshot keeps the shipped analytical program, not a separate famou results.json artifact",
+    "status": "material_only"
+  },
+  "last_updated": "2026-03-14"
+}

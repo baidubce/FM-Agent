@@ -1,0 +1,7 @@
+evolve_config:
+  max_iterations: 100
+  population_size: 100
+  num_islands: 2
+initial_program: "init.py"
+evaluator: "evaluator.py"
+system_message: "prompt.md"

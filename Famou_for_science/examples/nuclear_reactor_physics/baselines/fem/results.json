@@ -1,0 +1,9 @@
+{
+  "method": "High-order FDM (4th-order)",
+  "N": 200,
+  "combined_score": 0.9999892021645498,
+  "mean_pde_residual": 9.921444801489764e-06,
+  "mean_bc_residual": 8.765072431973849e-07,
+  "runtime_seconds": 9.023674011230469,
+  "note": "FEM replacement: FEniCS/scikit-fem unavailable, using 4th-order FDM instead"
+}

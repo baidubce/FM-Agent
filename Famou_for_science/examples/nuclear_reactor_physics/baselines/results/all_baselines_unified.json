@@ -1,0 +1,37 @@
+[
+  {
+    "validity": 1.0,
+    "combined_score": 0.9185712875293996,
+    "cost_time": 2.2261078357696533,
+    "error_info": "",
+    "method": "FDM (2nd-order, N=200)"
+  },
+  {
+    "validity": 1.0,
+    "combined_score": 0.9185598106515965,
+    "cost_time": 9.60161018371582,
+    "error_info": "",
+    "method": "High-order FDM (4th-order, N=200)"
+  },
+  {
+    "validity": 1.0,
+    "combined_score": 0.9935505424338371,
+    "cost_time": 0.02960491180419922,
+    "error_info": "",
+    "method": "Truncated Analytical (K=5)"
+  },
+  {
+    "validity": 1.0,
+    "combined_score": 0.9586856451419834,
+    "cost_time": 7.091109752655029,
+    "error_info": "",
+    "method": "PINN (numpy)"
+  },
+  {
+    "validity": 1.0,
+    "combined_score": 0.9988939458957945,
+    "cost_time": 0.04594993591308594,
+    "error_info": "",
+    "method": "Fourier Analytical (N=30)"
+  }
+]

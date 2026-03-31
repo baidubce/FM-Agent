@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: Agent for Science
+message: "If you use this repository, please cite the software snapshot and the accompanying manuscript if applicable."
+type: software
+license: MIT
+version: 0.1.0
+abstract: "Public research snapshot for program evolution and baseline methods on scientific problems."
+authors:
+  - name: "The Famou Team"
+keywords:
+  - scientific computing
+  - program evolution
+  - PDE
+  - neutron diffusion

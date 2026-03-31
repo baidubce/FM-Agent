@@ -1,0 +1,31 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+
+# Keep the compiled PDF
+!paper/main.pdf
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Large data files
+data_for_famou/*.npy
+data_for_famou/*.h5
+data_for_famou/*.hdf5
+
+# Temp files
+*.tmp
+/temp/
+.cache/

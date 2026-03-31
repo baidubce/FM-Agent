@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "Write(*)",
+      "Edit(*)",
+      "Task(*)",
+      "WebSearch",
+      "WebFetch",
+      "Skill(claude-api)"
+    ]
+  }
+}

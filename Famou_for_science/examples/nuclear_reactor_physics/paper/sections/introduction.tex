@@ -1,0 +1,51 @@
+% ============================================================
+% Section: Introduction
+% ============================================================
+\section{Introduction}
+\label{sec:introduction}
+
+% --- Layer 1: The Challenge ---
+Nuclear reactor design and safety analysis depend on accurate neutron flux predictions.
+The neutron diffusion equation---a tractable approximation to the Boltzmann transport equation---remains the standard model for core calculations, and its two-group variant, separating fast and thermal neutrons, retains enough physics to capture moderation and absorption while admitting analytical treatment in simple geometries~\cite{duderstadt1976nuclear,bell1970nuclear,lee2020nuclear}.
+
+Solutions to the multigroup diffusion equations have traditionally come from two directions.
+Analytical methods---Fourier series, Green's functions, eigenvalue decomposition---yield exact results for canonical geometries and remain the primary verification benchmarks~\cite{zanette2018fourier,williams2013fourier}, but they are restricted to regular domains with simple material layouts; deriving them for coupled multigroup systems under non-trivial boundary conditions requires considerable manual effort.
+Numerical discretizations (FDM, FEM) handle arbitrary geometries and heterogeneous media at the price of discretization error and, for full-core problems, substantial computation~\cite{lee2020nuclear,kuridan2023neutron}.
+
+% --- Layer 1 continued: ML paradigm ---
+Scientific machine learning has opened a third route.
+Physics-Informed Neural Networks (PINNs) fold PDE residuals into the training loss, producing mesh-free solutions for both forward and inverse problems~\cite{raissi2019pinn}.
+In reactor physics, successive architectural changes have reduced PINN errors on two-group problems~\cite{elhareef2022pinn,tlpinn2023,naspinn2025}.
+Neural operator approaches, including DeepONet~\cite{lu2021deeponet} and the Fourier Neural Operator~\cite{li2021fno}, learn solution operators that generalize across problem parameters, achieving large speedups over traditional solvers in neutron transport surrogate modeling~\cite{kobayashi2024deeponet}.
+Both families have limits: PINNs exhibit training instability and accuracy bottlenecks (0.6--15\% error for two-group problems~\cite{elhareef2022pinn}), and neural operators are constrained by the coverage and fidelity of their training data.
+
+% --- Layer 2: What We Do ---
+This paper combines classical analytical derivation with LLM-driven program evolution to solve the two-group neutron diffusion equation on a two-dimensional finite homogeneous domain with boundary sources.
+The first component is a Fourier cosine series solution that gives exact ground truth for the boundary-source problem in rectangular geometry.
+The second is \textbf{FaMoU} (\underline{Fa}st \underline{Mo}de m\underline{U}tation), an evolutionary program synthesis loop---inspired by FunSearch and AlphaEvolve---in which a large language model iteratively generates and refines solver programs, scored against the analytical ground truth.
+We benchmark both components alongside FDM, high-order FDM, and PINN on the same problem instance.
+
+% --- Layer 3: Technical Approach ---
+Specifically, we derive the two-group neutron flux distribution by expanding the solution in a Fourier cosine series that satisfies the homogeneous Neumann boundary conditions, with the boundary source incorporated through Fourier decomposition of the inhomogeneous condition.
+The resulting coupled system of ordinary differential equations is solved analytically for each Fourier mode, yielding pointwise ground truth with controllable accuracy governed by the number of retained modes.
+For the evolutionary component, inspired by FunSearch~\cite{funsearch2024} and AlphaEvolve~\cite{alphaevolve2025}, an initial seed program is iteratively improved by a large language model, with each candidate scored by an automated evaluator that measures PDE and boundary-condition residuals as RMS values at fixed test points.
+A distinguishing feature of our setup is that the evaluator computes error against an \emph{exact} analytical ground truth, rather than relying on heuristic scores or combinatorial bounds as in most program evolution work.
+
+% --- Layer 4: Contributions ---
+Our main contributions are as follows:
+\begin{itemize}
+    \item \textbf{Analytical benchmark.} We derive and implement the complete analytical solution for the two-group neutron diffusion equation with boundary sources in a 2D finite homogeneous rectangular medium, providing a high-precision reference solution that satisfies the PDE exactly in the continuous limit and achieves residuals below $4 \times 10^{-5}$ under numerical evaluation.
+
+    \item \textbf{First LLM-driven evolution for physics PDE solving.} To our knowledge, this is the first work to apply the LLM-driven program evolution paradigm---pioneered by FunSearch~\cite{funsearch2024} and AlphaEvolve~\cite{alphaevolve2025} for mathematical and algorithmic discovery---to the domain of computational physics PDE solving. We demonstrate that evolutionary program synthesis can discover solver programs achieving competitive accuracy with hand-crafted numerical methods.
+
+    \item \textbf{Comprehensive method comparison.} We present a unified benchmark comparing analytical, FDM, PINN, and LLM-evolved solvers on the same problem instance, providing quantitative insights into the accuracy--efficiency trade-offs across four distinct methodological paradigms.
+
+    \item \textbf{Overflow-safe adaptive truncation.} We identify and resolve a numerical overflow issue in the standard Fourier implementation, deriving a stability criterion that allows the expansion to include all float64-safe modes (up to $n{=}221$), improving the combined score from $0.9989$ to $0.9997$.
+\end{itemize}
+
+The remainder of this paper is organized as follows.
+\Cref{sec:related_work} surveys related work across classical numerical methods, PINNs, neural operators, and LLM-driven program evolution.
+\Cref{sec:problem} presents the mathematical formulation and analytical solution.
+\Cref{sec:method} describes the LLM-driven evolutionary framework and baseline methods.
+\Cref{sec:experiments} reports experimental results and comparative analysis.
+\Cref{sec:conclusion} concludes with a discussion of implications and future directions.

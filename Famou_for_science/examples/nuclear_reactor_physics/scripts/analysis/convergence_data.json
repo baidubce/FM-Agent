@@ -1,0 +1,92 @@
+[
+  {
+    "N_modes": 1,
+    "pde_residual_mean": 3.062953069462104e-05,
+    "pde_residual_max": 0.00013575921960241183,
+    "pde_residual_l2": 5.192200154264022e-05,
+    "bc_residual_mean": 0.03111979026410579,
+    "bc_residual_max": 0.049705629932389084,
+    "bc_residual_l2": 0.03333949101377001,
+    "combined_score": 0.9697906152227534
+  },
+  {
+    "N_modes": 3,
+    "pde_residual_mean": 2.8850825217869322e-05,
+    "pde_residual_max": 0.00011611679751047724,
+    "pde_residual_l2": 4.609568399921165e-05,
+    "bc_residual_mean": 0.005133966866722811,
+    "bc_residual_max": 0.011916902587350342,
+    "bc_residual_l2": 0.0062771939619545485,
+    "combined_score": 0.9948637000881155
+  },
+  {
+    "N_modes": 5,
+    "pde_residual_mean": 2.6550346500795553e-05,
+    "pde_residual_max": 0.00012299232132645388,
+    "pde_residual_l2": 4.593854894321115e-05,
+    "bc_residual_mean": 0.0019823147202803148,
+    "bc_residual_max": 0.0064184569177953565,
+    "bc_residual_l2": 0.00307100391588315,
+    "combined_score": 0.9979951623814753
+  },
+  {
+    "N_modes": 10,
+    "pde_residual_mean": 2.1146145403452317e-05,
+    "pde_residual_max": 0.00010217679627799389,
+    "pde_residual_l2": 3.876317101288967e-05,
+    "bc_residual_mean": 0.0003503521129054776,
+    "bc_residual_max": 0.0011738255774666473,
+    "bc_residual_l2": 0.0005581060676158898,
+    "combined_score": 0.9996286397013951
+  },
+  {
+    "N_modes": 15,
+    "pde_residual_mean": 2.504987179100592e-05,
+    "pde_residual_max": 0.00010911569019511277,
+    "pde_residual_l2": 4.225015845835038e-05,
+    "bc_residual_mean": 0.000277635775430779,
+    "bc_residual_max": 0.0012027467226001787,
+    "bc_residual_l2": 0.0005414087073230949,
+    "combined_score": 0.9996974059436559
+  },
+  {
+    "N_modes": 20,
+    "pde_residual_mean": 2.331514825142721e-05,
+    "pde_residual_max": 0.00010911569019511277,
+    "pde_residual_l2": 4.142517989666027e-05,
+    "bc_residual_mean": 5.788648586999012e-05,
+    "bc_residual_max": 0.00020697256502516526,
+    "bc_residual_l2": 9.657380748693556e-05,
+    "combined_score": 0.9999188049590486
+  },
+  {
+    "N_modes": 25,
+    "pde_residual_mean": 2.331514825130361e-05,
+    "pde_residual_max": 0.00010911569019511277,
+    "pde_residual_l2": 4.142517989672006e-05,
+    "bc_residual_mean": 0.00010392929599378208,
+    "bc_residual_max": 0.0004776526803588754,
+    "bc_residual_l2": 0.00021406925340192783,
+    "combined_score": 0.9998727717448436
+  },
+  {
+    "N_modes": 30,
+    "pde_residual_mean": 2.3315148251304912e-05,
+    "pde_residual_max": 0.00010911569019511277,
+    "pde_residual_l2": 4.1425179896719365e-05,
+    "bc_residual_mean": 1.858817713741856e-05,
+    "bc_residual_max": 6.693463744972261e-05,
+    "bc_residual_l2": 3.115731958705948e-05,
+    "combined_score": 0.9999580984304262
+  },
+  {
+    "N_modes": 50,
+    "pde_residual_mean": 2.3315148251304912e-05,
+    "pde_residual_max": 0.00010911569019511277,
+    "pde_residual_l2": 4.1425179896719365e-05,
+    "bc_residual_mean": 4.304218399381332e-06,
+    "bc_residual_max": 1.4842223733768645e-05,
+    "bc_residual_l2": 6.970720594354189e-06,
+    "combined_score": 0.9999723813961575
+  }
+]

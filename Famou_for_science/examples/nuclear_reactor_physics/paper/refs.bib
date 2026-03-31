@@ -1,0 +1,252 @@
+% ============================================================
+% Bibliography: Two-Group Neutron Diffusion + AI for Science
+% Verified 2026-03-14 by Background Researcher (4-layer check)
+% ============================================================
+
+% ----------------------------------------------------------
+% Domain 1: Classical Nuclear Physics — Textbooks
+% Status: ALL VERIFIED (well-known textbooks)
+% ----------------------------------------------------------
+
+@book{duderstadt1976nuclear,
+  author    = {Duderstadt, James J. and Hamilton, Louis J.},
+  title     = {Nuclear Reactor Analysis},
+  publisher = {Wiley},
+  address   = {New York},
+  year      = {1976},
+}
+
+@book{bell1970nuclear,
+  author    = {Bell, George I. and Glasstone, Samuel},
+  title     = {Nuclear Reactor Theory},
+  publisher = {Van Nostrand Reinhold},
+  address   = {New York},
+  year      = {1970},
+}
+
+@book{lee2020nuclear,
+  author    = {Lee, John C.},
+  title     = {Nuclear Reactor Physics and Engineering},
+  publisher = {Wiley},
+  year      = {2020},
+  edition   = {1st},
+}
+
+@book{kuridan2023neutron,
+  author    = {Kuridan, Ramadan M.},
+  title     = {Neutron Transport: Theory, Modeling, and Computations},
+  series    = {Graduate Texts in Physics},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2023},
+  doi       = {10.1007/978-3-031-26932-5},
+}
+
+% ----------------------------------------------------------
+% Domain 1: Classical — Fourier Methods
+% ----------------------------------------------------------
+
+@techreport{osti1974fourier,
+  title     = {Solution of two-dimensional diffusion equation by the finite {F}ourier transformation},
+  institution = {Oak Ridge National Laboratory},
+  year      = {1974},
+  note      = {OSTI ID: 4244956},
+  url       = {https://www.osti.gov/biblio/4244956},
+}
+
+% VERIFIED: Zanette et al. 2018, Annals of Nuclear Energy vol 111
+% Replaces previous ceolin2017fourier entry (DOI unverifiable)
+@article{zanette2018fourier,
+  author    = {Zanette, Rubem and Petersen, Claudio Z. and Schramm, Marcelo and Zabadal, Jorge R.},
+  title     = {A modified power method for the multilayer multigroup two-dimensional neutron diffusion equation},
+  journal   = {Annals of Nuclear Energy},
+  volume    = {111},
+  pages     = {136--140},
+  year      = {2018},
+  doi       = {10.1016/j.anucene.2017.09.010},
+}
+
+% VERIFIED: Williams, Hall, Eaton 2013 (previously misattributed as "Kashi/Sherief")
+@article{williams2013fourier,
+  author    = {Williams, M. M. R. and Hall, S. K. and Eaton, M. D.},
+  title     = {Solution of the two dimensional diffusion and transport equations in a rectangular lattice with an elliptical fuel element using {F}ourier transform methods: One and two group cases},
+  journal   = {Annals of Nuclear Energy},
+  volume    = {62},
+  pages     = {186--196},
+  year      = {2013},
+  doi       = {10.1016/j.anucene.2013.06.020},
+}
+
+@article{momani2024twogroup,
+  author    = {Momani, Shaher and Shqair, Mohammad and Batiha, Iqbal M.},
+  title     = {Two-energy group neutron diffusion model in spherical reactors},
+  journal   = {Results in Nonlinear Analysis},
+  year      = {2024},
+}
+
+% ----------------------------------------------------------
+% Domain 1: Classical — FDM / FEM
+% ----------------------------------------------------------
+
+@incollection{davierwalla1977fem,
+  author    = {Davierwalla, D. M.},
+  title     = {A finite element solution to the neutron diffusion equation in two dimensions},
+  booktitle = {Numerical Treatment of Differential Equations},
+  series    = {International Series of Numerical Mathematics},
+  volume    = {37},
+  publisher = {Birkh\"{a}user},
+  year      = {1977},
+  doi       = {10.1007/978-3-0348-5575-4_5},
+}
+
+@incollection{schmid1995fem,
+  author    = {Schmid, Werner and Wagner, Werner},
+  title     = {Numerical solution of neutron diffusion equations},
+  booktitle = {Numerical Treatment of Coupled Systems},
+  publisher = {Vieweg+Teubner},
+  year      = {1995},
+}
+
+% ----------------------------------------------------------
+% Domain 2: Physics-Informed Neural Networks
+% ----------------------------------------------------------
+
+@article{raissi2019pinn,
+  author    = {Raissi, Maziar and Perdikaris, Paris and Karniadakis, George Em},
+  title     = {Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations},
+  journal   = {Journal of Computational Physics},
+  volume    = {378},
+  pages     = {686--707},
+  year      = {2019},
+  doi       = {10.1016/j.jcp.2018.10.045},
+}
+
+% VERIFIED: Elhareef & Wu (previously misattributed as Schiassi)
+@article{elhareef2022pinn,
+  author    = {Elhareef, Mohamed H. and Wu, Zeyun},
+  title     = {Physics-Informed Neural Network Method and Application to Nuclear Reactor Calculations: A Pilot Study},
+  journal   = {Nuclear Science and Engineering},
+  volume    = {197},
+  number    = {4},
+  pages     = {601--622},
+  year      = {2023},
+  doi       = {10.1080/00295639.2022.2123211},
+}
+
+% VERIFIED: Prantikos et al. (previously misattributed as Radaideh)
+@article{tlpinn2023,
+  author    = {Prantikos, Konstantinos and Chatzidakis, Stylianos and Tsoukalas, Lefteri H. and Heifetz, Alexander},
+  title     = {Physics-informed neural network with transfer learning ({TL-PINN}) based on domain similarity measure for prediction of nuclear reactor transients},
+  journal   = {Scientific Reports},
+  volume    = {13},
+  pages     = {16840},
+  year      = {2023},
+  doi       = {10.1038/s41598-023-43325-1},
+}
+
+% VERIFIED: Xie, Ma, Wang
+@article{parampinn2024,
+  author    = {Xie, Yuchen and Ma, Yu and Wang, Yahui},
+  title     = {Solving steady-state mono-energy neutron diffusion solution set with parameterized physics-informed neural network},
+  journal   = {Atomic Energy Science and Technology},
+  volume    = {58},
+  number    = {6},
+  pages     = {1242--1249},
+  year      = {2024},
+  doi       = {10.7538/yzk.2023.youxian.0765},
+}
+
+% VERIFIED: Yu, Jiang, Chen, Liu, Lyu
+@article{naspinn2025,
+  author    = {Yu, Caiyang and Jiang, Yong and Chen, Qilong and Liu, Dong and Lyu, Jiancheng},
+  title     = {Research on efficient solution of neutron physics equations using {NAS}-optimized {PINN}},
+  journal   = {Nuclear Power Engineering},
+  volume    = {46},
+  number    = {2},
+  pages     = {119--126},
+  year      = {2025},
+  doi       = {10.13832/j.jnpe.2024.090041},
+}
+
+% VERIFIED: Zhang et al., arXiv:2407.10988
+@article{r2pinn2025,
+  author    = {Zhang, Heng and He, Yunling and others},
+  title     = {Residual resampling-based physics-informed neural network for neutron diffusion equations},
+  journal   = {Nuclear Science and Techniques},
+  year      = {2025},
+  doi       = {10.1007/s41365-025-01839-5},
+}
+
+% ----------------------------------------------------------
+% Domain 3: Neural Operators
+% ----------------------------------------------------------
+
+@article{lu2021deeponet,
+  author    = {Lu, Lu and Jin, Pengzhan and Pang, Guofei and Zhang, Zhongqiang and Karniadakis, George Em},
+  title     = {Learning nonlinear operators via {DeepONet} based on the universal approximation theorem of operators},
+  journal   = {Nature Machine Intelligence},
+  volume    = {3},
+  pages     = {218--229},
+  year      = {2021},
+  doi       = {10.1038/s42256-021-00302-5},
+}
+
+@inproceedings{li2021fno,
+  author    = {Li, Zongyi and Kovachki, Nikola and Azizzadenesheli, Kamyar and Liu, Burigede and Bhattacharya, Kaushik and Stuart, Andrew and Anandkumar, Anima},
+  title     = {Fourier Neural Operator for Parametric Partial Differential Equations},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021},
+  url       = {https://openreview.net/forum?id=c8P9NQVtmnO},
+}
+
+% VERIFIED: Kobayashi & Alam (previously misattributed as "Park")
+@article{kobayashi2024deeponet,
+  author    = {Kobayashi, Kazuma and Alam, Syed Bahauddin},
+  title     = {Deep neural operator-driven real-time inference to enable digital twin solutions for nuclear energy systems},
+  journal   = {Scientific Reports},
+  volume    = {14},
+  pages     = {2101},
+  year      = {2024},
+  doi       = {10.1038/s41598-024-51984-x},
+}
+
+% VERIFIED: Sahadath, Cheng, Pan, Ji
+@article{sahadath2026neuralop,
+  author    = {Sahadath, Md Hossain and Cheng, Qiyun and Pan, Shaowu and Ji, Wei},
+  title     = {Surrogate Modeling for Neutron Transport: A Neural Operator Approach},
+  journal   = {arXiv preprint arXiv:2602.15890},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2602.15890},
+}
+
+% ----------------------------------------------------------
+% Domain 4: LLM-Driven Program Evolution
+% ----------------------------------------------------------
+
+@article{funsearch2024,
+  author    = {Romera-Paredes, Bernardino and Barekatain, Mohammadamin and Novikov, Alexander and Balog, Matej and Kumar, M. Pawan and Dupont, Emilien and Ruiz, Francisco J. R. and Fawzi, Alhussein and others},
+  title     = {Mathematical discoveries from program search with large language models},
+  journal   = {Nature},
+  volume    = {625},
+  number    = {7995},
+  pages     = {468--475},
+  year      = {2024},
+  doi       = {10.1038/s41586-023-06924-6},
+}
+
+@article{alphaevolve2025,
+  author    = {Novikov, Alexander and V\~{u}, Ng\^{a}n and Eisenberger, Marvin and Dupont, Emilien and Huang, Po-Sen and Wagner, Adam Zsolt and others},
+  title     = {{AlphaEvolve}: A coding agent for scientific and algorithmic discovery},
+  journal   = {arXiv preprint arXiv:2506.13131},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2506.13131},
+}
+
+% VERIFIED: Assumpção, Ferreira, Campos, Murai
+@article{codeevolve2025,
+  author    = {Assump\c{c}\~{a}o, Henrique and Ferreira, Diego and Campos, Leandro and Murai, Fabricio},
+  title     = {{CodeEvolve}: An open source evolutionary coding agent for algorithm discovery and optimization},
+  journal   = {arXiv preprint arXiv:2510.14150},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2510.14150},
+}

@@ -1,0 +1,28 @@
+% ============================================================
+% Section: Conclusion
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+We derived and implemented the Fourier cosine expansion solution for the two-dimensional, two-group neutron diffusion equations under inhomogeneous Neumann boundary conditions---a problem where coupled PDEs, non-trivial boundary forcing, and rectangular geometry together rule out simpler approaches.
+Expanding in cosine basis functions reduces the coupled system to per-mode ODEs; the characteristic equations yield closed-form fast and thermal flux expressions.
+
+Three findings stand out.
+First, under a unified pointwise evaluator, the Fourier analytical solution ($N{=}30$) scores 0.9989---reducing the combined residual 39-fold relative to PINN (0.9587) and surpassing both FDM variants (0.9186).
+The FDM gap is not a failure of the underlying discretization; the grid solutions are accurate on their native mesh.
+The penalty comes from the interface: spline interpolation of a grid solution introduces artifacts when the evaluator probes derivatives at step size $h = 10^{-6}$.
+Analytical solutions sidestep this entirely.
+Second, the PDE residual fluctuates near $3 \times 10^{-5}$ regardless of mode count, determined by the evaluator's finite-difference precision floor---not by any deficiency in the analytical expression itself.
+Third, an overflow-safe adaptive variant (breaking at $\alpha > 700$, retaining up to $n{=}221$ modes) improves the score to 0.9997 with evaluation time under 0.2\,s---faster than PINN inference and 50$\times$ faster than high-order FDM.
+FaMoU seeds from this analytical solution and evolves the solver code further; after 10 iterations, the LLM-evolved program reaches 0.9993---surpassing the $N{=}30$ seed---demonstrating that evolutionary program synthesis operates productively in the physics PDE domain.
+
+\paragraph{Limitations.}
+The obvious constraints: steady-state, homogeneous medium, square domain, two energy groups.
+Heterogeneous cross-sections, irregular geometries, and higher group counts each require different basis choices.
+The PINN baseline uses NumPy without automatic differentiation; a properly trained PyTorch PINN would likely narrow the accuracy gap.
+
+\paragraph{Future directions.}
+The benchmark setup directly enables three follow-on studies.
+First, the evaluator can be extended to heterogeneous media by replacing the global Fourier expansion with a domain-decomposed or interface-coupled variant, testing whether FaMoU can rediscover multi-region solutions without a hand-crafted seed.
+Second, the FaMoU framework can target transient or eigenvalue problems (criticality search), where no closed-form solution exists and the evolutionary loop would need to optimize against a numerical ground truth.
+Third, the same pairing---exact analytical evaluator plus evolutionary search---applies naturally to higher-dimensional or multi-physics problems where deriving closed-form solutions by hand is prohibitively complex.

@@ -1,0 +1,87 @@
+% ============================================================
+% Section: Related Work
+% ============================================================
+\section{Related Work}
+\label{sec:related_work}
+
+% ----------------------------------------------------------
+\subsection{Classical Numerical Methods for Neutron Diffusion}
+\label{sec:rw_classical}
+
+The neutron diffusion equation has been studied extensively since the early development of nuclear reactor theory.
+The foundational texts by Duderstadt and Hamilton~\cite{duderstadt1976nuclear} and Bell and Glasstone~\cite{bell1970nuclear} established the multigroup diffusion framework, providing analytical solutions for canonical geometries (slab, cylinder, sphere) and laying the theoretical groundwork for numerical implementations.
+
+\paragraph{Analytical methods.}
+Fourier series expansion has been a classical tool for solving the diffusion equation in rectangular geometries.
+The finite Fourier sine transform was applied to two-dimensional neutron diffusion as early as the 1970s~\cite{osti1974fourier}, with subsequent work by Williams et al.~\cite{williams2013fourier} extending Fourier methods to rectangular lattice cells with one- and two-group formulations.
+More recently, Zanette, Ceolin, and collaborators developed the Fictitious Borders Power Method (FBPM)~\cite{zanette2018fourier}, which applies the finite Fourier sine transform at each iteration of the power method, yielding analytical solutions for multigroup diffusion in 2D Cartesian geometry with competitive runtime compared to purely numerical approaches.
+For spherical geometries, Momani et al.~\cite{momani2024twogroup} applied the homotopy perturbation method to two-energy-group models with fractional-order extensions.
+
+\paragraph{Finite difference and finite element methods.}
+The finite difference method (FDM) remains the most widely used numerical approach for neutron diffusion, with second-order central difference schemes providing $O(h^2)$ accuracy on structured grids~\cite{lee2020nuclear,kuridan2023neutron}.
+Modern implementations employ Krylov subspace methods for the resulting large sparse systems, enabling efficient multi-dimensional, multigroup calculations.
+The finite element method (FEM) offers greater geometric flexibility, with Lagrangian elements of varying order ($p=1,2,3$) applied to two-dimensional diffusion problems~\cite{davierwalla1977fem}.
+Hybrid mixed finite elements have been employed for coupled multigroup systems treated as elliptic--parabolic PDEs~\cite{schmid1995fem}.
+While both FDM and FEM are mature and well-validated, they introduce discretization errors that require careful mesh convergence studies and cannot provide closed-form reference solutions.
+
+% ----------------------------------------------------------
+\subsection{Physics-Informed Neural Networks}
+\label{sec:rw_pinn}
+
+Physics-Informed Neural Networks (PINNs), introduced by Raissi et al.~\cite{raissi2019pinn}, embed governing equations directly into the training loss, enabling mesh-free PDE solving.
+The original framework demonstrated data-driven solution and discovery of nonlinear PDEs using fully connected networks trained with automatic differentiation to enforce PDE residuals at collocation points.
+
+\paragraph{Applications to nuclear reactor physics.}
+Elhareef and Wu~\cite{elhareef2022pinn} presented the first systematic study applying PINNs to nuclear reactor calculations, addressing both fixed-source and $k$-eigenvalue problems.
+Their results revealed a significant accuracy range: 0.63\% error for simple fixed-source configurations but up to $\sim$15\% for two-group eigenvalue problems, with $k$-eigenvalue deviations of 0.13--0.92\%.
+These findings highlight the challenge of applying PINNs to coupled multigroup systems.
+Subsequent work has addressed specific PINN limitations in the nuclear context.
+The Transfer Learning PINN (TL-PINN) approach~\cite{tlpinn2023} achieved up to two orders of magnitude acceleration in training for reactor transient prediction by leveraging pre-trained models across related configurations.
+Parameterized PINNs with hard boundary constraints~\cite{parampinn2024} demonstrated 1{,}000$\times$ speedup over the commercial solver COMSOL for parametric steady-state diffusion problems.
+More recently, NAS-PINN~\cite{naspinn2025} employed neural architecture search to dynamically optimize the PINN structure for different reactor geometries, while the R$^2$-PINN~\cite{r2pinn2025} replaced the standard fully connected architecture with convolutional networks featuring skip connections to address gradient vanishing in deeper networks.
+
+\paragraph{Key trends.}
+The trajectory of PINN research in nuclear physics reveals a progression from simple architectures toward specialized designs: architectural innovations (FCN $\to$ CNN with skip connections $\to$ NAS-optimized), reusability mechanisms (transfer learning, parameterization), and adaptive training strategies (residual resampling, hard boundary constraints).
+Despite these advances, PINNs for multigroup diffusion remain limited by training instability and accuracy ceilings, particularly for coupled systems.
+
+% ----------------------------------------------------------
+\subsection{Neural Operator Approaches}
+\label{sec:rw_neuralop}
+
+Neural operators learn mappings between function spaces, offering a fundamentally different approach from PINNs by learning entire solution operators rather than individual solutions.
+
+\paragraph{DeepONet.}
+Lu et al.~\cite{lu2021deeponet} introduced the Deep Operator Network (DeepONet), consisting of a branch network encoding the input function and a trunk network encoding the output domain coordinates.
+Based on the universal approximation theorem for operators, DeepONet has been applied to nuclear energy systems for real-time digital twin inference, where it was used to construct surrogate models for neutron flux spatial distributions with performance exceeding that of standard CNN and FCN architectures~\cite{kobayashi2024deeponet}.
+
+\paragraph{Fourier Neural Operator.}
+The Fourier Neural Operator (FNO), proposed by Li et al.~\cite{li2021fno}, parameterizes integral kernels directly in Fourier space, achieving state-of-the-art accuracy among learning-based PDE solvers with up to three orders of magnitude speedup over traditional methods.
+The FNO was the first ML-based method to achieve zero-shot super-resolution for turbulent flow simulations.
+A recent comparative study on neutron transport~\cite{sahadath2026neuralop} found that FNO generally achieves higher predictive accuracy ($\sim$112~pcm deviation) while DeepONet offers greater computational efficiency, with both reducing runtime to less than 0.1\% of a traditional $S_N$ solver.
+
+\paragraph{Relationship to our work.}
+While neural operator approaches achieve impressive speedups, they are primarily \emph{surrogate models} that approximate existing solvers.
+In contrast, our LLM-driven evolutionary approach aims to \emph{discover} new solver programs that can be inspected, interpreted, and potentially provide insights into the problem structure.
+
+% ----------------------------------------------------------
+\subsection{LLM-Driven Program Evolution}
+\label{sec:rw_llmevo}
+
+The use of large language models for scientific discovery through program synthesis has emerged as an active area with rapid recent progress.
+
+\paragraph{FunSearch.}
+Romera-Paredes et al.~\cite{funsearch2024} introduced FunSearch, an evolutionary system that pairs a pre-trained LLM (as a code generator) with an automated evaluator.
+Operating as a distributed system with a programs database employing the island model for diversity maintenance, FunSearch iteratively generates, evaluates, and selects programs in an evolutionary loop.
+FunSearch achieved the first genuine LLM-driven mathematical discovery, producing new constructions for the cap set problem---the largest improvement in asymptotic lower bounds in 20 years---and discovering more effective bin-packing heuristics.
+Critically, FunSearch searches in \emph{function space} rather than solution space, yielding interpretable programs that describe \emph{how to solve} a problem rather than just \emph{what the solution is}.
+
+\paragraph{AlphaEvolve.}
+Building on FunSearch, AlphaEvolve~\cite{alphaevolve2025} extended the paradigm to evolve entire codebases rather than single functions, using an ensemble of Gemini models for balanced throughput and solution quality.
+AlphaEvolve achieved remarkable results: improving Strassen's matrix multiplication algorithm (the first improvement in 56 years), recovering 0.7\% of Google's worldwide compute resources through data center optimization, and rediscovering state-of-the-art solutions for 75\% of 50+ open mathematical problems while finding superior solutions for 20\%.
+Open-source implementations, such as CodeEvolve~\cite{codeevolve2025}, have further democratized this paradigm.
+
+\paragraph{Gap: LLM evolution for physics PDE solving.}
+Existing LLM-driven program evolution work has focused primarily on combinatorial optimization, pure mathematics, and computational infrastructure.
+To our knowledge, no prior work has applied this paradigm to the domain of physics PDE solving.
+Our work addresses this gap by combining LLM-driven program evolution with an analytical ground truth evaluator, enabling the evolutionary discovery of PDE solver programs for neutron diffusion equations.
+Our work connects these two threads: LLM-driven program evolution, operating against an exact analytical ground truth evaluator, discovers PDE solver programs for neutron diffusion in a domain where no prior evolutionary approach has been applied.

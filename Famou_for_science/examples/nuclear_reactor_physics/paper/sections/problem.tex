@@ -1,0 +1,133 @@
+% ============================================================
+% Section: Problem Formulation
+% ============================================================
+\section{Problem Formulation}
+\label{sec:problem}
+
+We consider the steady-state two-group neutron diffusion problem on a square domain.
+The goal is to construct analytical functions $\varphi_1(x,y)$ and $\varphi_2(x,y)$ that simultaneously satisfy the governing PDEs and all boundary conditions.
+
+% ------------------------------------------------------------
+\subsection{Governing Equations}
+\label{sec:governing}
+
+The two-group neutron diffusion equations couple the fast-group flux $\varphi_1$ and the thermal-group flux $\varphi_2$ as follows.
+
+\paragraph{Fast-group equation.}
+\begin{equation}
+\label{eq:fast_group}
+-D_1 \nabla^2 \varphi_1 + \Sigma_r \, \varphi_1
+= \nu \Sigma_{f1} \, \varphi_1 + \nu \Sigma_{f2} \, \varphi_2,
+\end{equation}
+
+\paragraph{Thermal-group equation.}
+\begin{equation}
+\label{eq:thermal_group}
+-D_2 \nabla^2 \varphi_2 + \Sigma_{a2} \, \varphi_2
+= \Sigma_{1\to2} \, \varphi_1,
+\end{equation}
+
+\noindent where the Laplacian operator is defined as
+$\nabla^2 \varphi = \frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2}$.
+
+% ------------------------------------------------------------
+\subsection{Physical Parameters}
+\label{sec:parameters}
+
+Table~\ref{tab:params} summarizes the physical constants used throughout this work.
+
+\begin{table}[h]
+\centering
+\caption{Physical parameters for the two-group neutron diffusion problem.}
+\label{tab:params}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Symbol & Description & Value \\
+\midrule
+$D_1$               & Fast-group diffusion coefficient        & $1.0$   \\
+$D_2$               & Thermal-group diffusion coefficient     & $0.5$   \\
+$\Sigma_r$          & Fast-group removal cross-section        & $0.02$  \\
+$\Sigma_{a2}$       & Thermal-group absorption cross-section  & $0.1$   \\
+$\nu$               & Average neutrons per fission            & $2.5$   \\
+$\Sigma_{f1}$       & Fast-group fission cross-section        & $0.005$ \\
+$\Sigma_{f2}$       & Thermal-group fission cross-section     & $0.1$   \\
+$\Sigma_{1\to2}$    & Group transfer cross-section            & $0.015$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------
+\subsection{Domain and Boundary Conditions}
+\label{sec:boundary}
+
+The spatial domain is a unit square centered at the origin:
+\begin{equation}
+\label{eq:domain}
+\Omega = [-0.5,\, 0.5]^2 \subset \mathbb{R}^2.
+\end{equation}
+
+All four boundaries carry Neumann (current) conditions. Specifically, the left boundary carries a non-zero source, while the remaining three boundaries are zero-flux:
+
+\paragraph{Left boundary ($x = -0.5$, non-zero Neumann).}
+\begin{equation}
+\label{eq:bc_left}
+-D_1 \frac{\partial \varphi_1}{\partial x}\bigg|_{x=-0.5} = y,
+\qquad
+-D_2 \frac{\partial \varphi_2}{\partial x}\bigg|_{x=-0.5} = y.
+\end{equation}
+
+\paragraph{Right boundary ($x = 0.5$, zero Neumann).}
+\begin{equation}
+\label{eq:bc_right}
+-D_1 \frac{\partial \varphi_1}{\partial x}\bigg|_{x=0.5} = 0,
+\qquad
+-D_2 \frac{\partial \varphi_2}{\partial x}\bigg|_{x=0.5} = 0.
+\end{equation}
+
+\paragraph{Top boundary ($y = 0.5$, zero Neumann).}
+\begin{equation}
+\label{eq:bc_top}
+-D_1 \frac{\partial \varphi_1}{\partial y}\bigg|_{y=0.5} = 0,
+\qquad
+-D_2 \frac{\partial \varphi_2}{\partial y}\bigg|_{y=0.5} = 0.
+\end{equation}
+
+\paragraph{Bottom boundary ($y = -0.5$, zero Neumann).}
+\begin{equation}
+\label{eq:bc_bottom}
+-D_1 \frac{\partial \varphi_1}{\partial y}\bigg|_{y=-0.5} = 0,
+\qquad
+-D_2 \frac{\partial \varphi_2}{\partial y}\bigg|_{y=-0.5} = 0.
+\end{equation}
+
+% ------------------------------------------------------------
+\subsection{Evaluation Criteria}
+\label{sec:evaluation}
+
+A candidate solution $(\varphi_1, \varphi_2)$ is assessed by its PDE residuals and boundary condition residuals.
+
+\paragraph{PDE residuals.}
+At each interior test point $(x, y) \in \Omega$, we compute:
+\begin{align}
+\label{eq:res_fast}
+\mathrm{Res}_1(x,y) &= -D_1 \left(\frac{\partial^2 \varphi_1}{\partial x^2} + \frac{\partial^2 \varphi_1}{\partial y^2}\right) + \Sigma_r \, \varphi_1 - \nu \Sigma_{f1} \, \varphi_1 - \nu \Sigma_{f2} \, \varphi_2, \\
+\label{eq:res_thermal}
+\mathrm{Res}_2(x,y) &= -D_2 \left(\frac{\partial^2 \varphi_2}{\partial x^2} + \frac{\partial^2 \varphi_2}{\partial y^2}\right) + \Sigma_{a2} \, \varphi_2 - \Sigma_{1\to2} \, \varphi_1.
+\end{align}
+
+The test points used for verification are:
+\begin{equation}
+\label{eq:test_points}
+\mathcal{T} = \{(0,0),\; (0.2, 0.2),\; (-0.2, -0.3),\; (0.4, -0.4)\}.
+\end{equation}
+
+\paragraph{Boundary condition residuals.}
+For each boundary segment $\Gamma_i$, we evaluate the deviation from the prescribed Neumann data. The combined score aggregates both PDE and BC residuals as root-mean-square (RMS) values.
+
+\paragraph{Combined score.}
+The overall quality metric is defined as:
+\begin{equation}
+\label{eq:combined_score}
+S = \frac{1}{1 + \bar{R}_{\mathrm{PDE}} + \bar{R}_{\mathrm{BC}}},
+\end{equation}
+where $\bar{R}_{\mathrm{PDE}}$ and $\bar{R}_{\mathrm{BC}}$ denote the root-mean-square (RMS) residuals over the interior test points and boundary evaluation points, respectively. The score $S \in (0, 1]$, with $S = 1$ indicating a perfect solution. Programs that fail to execute or produce invalid outputs receive $S = 0$.

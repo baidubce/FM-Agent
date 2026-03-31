@@ -1,0 +1,36 @@
+[
+  {
+    "method": "FDM",
+    "N": 100,
+    "combined_score": 0.99997939578455,
+    "mean_pde_residual": 1.983937792031185e-05,
+    "mean_bc_residual": 7.652620720640902e-07,
+    "runtime_seconds": 1.0693669319152832
+  },
+  {
+    "method": "Truncated Analytical (K=5)",
+    "K": 5,
+    "combined_score": 0.99946055407767,
+    "mean_pde_residual": 4.0442938544640257e-05,
+    "mean_bc_residual": 0.0004992941427531672,
+    "runtime_seconds": 0.0003368854522705078
+  },
+  {
+    "method": "PINN",
+    "combined_score": 0.9472680534575955,
+    "mean_pde_residual": 0.04583513080168869,
+    "mean_bc_residual": 0.009832265929288627,
+    "runtime_seconds": 5.557313919067383,
+    "n_steps": 3000,
+    "architecture": "[2, 40, 40, 2]"
+  },
+  {
+    "method": "High-order FDM (4th-order)",
+    "N": 200,
+    "combined_score": 0.9999892021642873,
+    "mean_pde_residual": 9.921445065084825e-06,
+    "mean_bc_residual": 8.765072421222882e-07,
+    "runtime_seconds": 6.597496032714844,
+    "note": "FEM replacement: FEniCS/scikit-fem unavailable, using 4th-order FDM instead"
+  }
+]

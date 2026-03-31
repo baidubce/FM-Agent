@@ -1,0 +1,119 @@
+\documentclass{article}
+
+% --- Page geometry (NeurIPS-like: 5.5in text width, 9in text height) ---
+\usepackage[
+  textwidth=5.5in,
+  textheight=9in,
+  top=1in,
+  left=1.5in,
+  headheight=14pt
+]{geometry}
+
+% --- Mathematics ---
+\usepackage{amsmath,amssymb,amsthm}
+
+% --- Fonts and encoding ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage{microtype}  % disabled: requires full TeX Live
+
+% --- Graphics and figures ---
+\usepackage{graphicx}
+\graphicspath{{figs/}}
+
+% --- Tables ---
+\usepackage{booktabs}
+
+% --- Algorithms (commented: packages not installed in basic TeX Live) ---
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+
+% --- Hyperlinks and cross-references ---
+\usepackage{hyperref}
+\usepackage{url}
+% cleveref fallback (package unavailable locally; use \Cref as capitalized \ref)
+\newcommand{\Cref}[1]{Section~\ref{#1}}
+
+% --- Colors ---
+\usepackage{xcolor}
+
+% --- Natbib for citations ---
+\usepackage[numbers,sort&compress]{natbib}
+
+% --- Custom commands ---
+\newcommand{\vph}{\varphi}
+\newcommand{\Sigr}{\Sigma_r}
+\newcommand{\Siga}{\Sigma_{a2}}
+\newcommand{\Sigf}[1]{\Sigma_{f#1}}
+\newcommand{\Sigs}{\Sigma_{1\to2}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Res}{\mathrm{Res}}
+
+% --- Theorem environments ---
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+
+% --- Title ---
+\title{Constructing Solutions for Two-Dimensional\\
+Two-Group Neutron Diffusion Equations via\\
+Evolutionary Program Synthesis}
+
+\author{
+  Author One\thanks{Equal contribution.} \\
+  Affiliation \\
+  \texttt{author1@email.com} \\
+  \and
+  Author Two\footnotemark[1] \\
+  Affiliation \\
+  \texttt{author2@email.com} \\
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+% Abstract
+% ============================================================
+\begin{abstract}
+Finite difference and finite element solvers for neutron diffusion accumulate discretization error; physics-informed neural networks avoid the mesh but require lengthy training.
+%
+We take a different route: a Fourier cosine expansion in the transverse direction decouples the two-group neutron diffusion equations into per-mode ODEs whose characteristic equations yield closed-form fast and thermal flux solutions.
+%
+FaMoU, our LLM-driven evolutionary program synthesis engine, then seeds from this analytical solution and iteratively mutates the solver code, scored by an automated physics evaluator.
+%
+On a standardized benchmark, the Fourier analytical solution ($N{=}30$ modes) achieves a combined PDE+BC score of $0.9989$, reducing the combined residual 39-fold relative to PINN and surpassing both FDM variants under uniform pointwise evaluation.
+An overflow-safe adaptive variant (up to $N{=}221$ modes) reaches $0.9997$.
+FaMoU seeds from this solution; after 10 iterations the LLM-evolved program already surpasses the seed, confirming that evolutionary program synthesis is a viable path for physics PDE discovery.
+\end{abstract}
+
+% ============================================================
+% Main body (modular sections)
+% ============================================================
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/problem}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/conclusion}
+
+% ============================================================
+% Acknowledgments
+% ============================================================
+\section*{Acknowledgments}
+The authors thank the reviewers for their careful reading. This work was conducted as an independent research project.
+
+% ============================================================
+% References
+% ============================================================
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+
+% ============================================================
+% Appendix (optional)
+% ============================================================
+% \appendix
+% \input{sections/appendix}
+
+\end{document}

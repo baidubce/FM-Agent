@@ -1,0 +1,3 @@
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
