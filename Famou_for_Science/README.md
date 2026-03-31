@@ -1,4 +1,4 @@
-# Agent for Science
+# Famou for Science
 
 中文说明见 [README.zh.md](README.zh.md).
 

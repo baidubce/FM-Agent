@@ -1,4 +1,4 @@
-# Agent for Science
+# Famou for Science
 
 English version: [README.md](README.md)
 
