@@ -559,7 +559,7 @@ window.FDE_DATA = {
       "mark": "*"
     },
     {
-      "name": "Wu Chufan",
+      "name": "Chufan Wu",
       "affiliation": 1,
       "mark": ""
     },

@@ -44,7 +44,7 @@
       quality: ['Quality', 'Mean normalized delivery quality'],
       dsr: ['DSR', 'Delivery success rate'],
       pass3: ['pass@3', 'At least one feasible delivery in three runs'],
-      all3: ['pass³', 'Feasible deliveries in all three runs'],
+      all3: ['pass^3', 'Feasible deliveries in all three runs'],
       recall: ['Recall', 'Clarification recall'],
       precision: ['Precision', 'Clarification precision'],
       askF1: ['Ask-F1', 'Clarification F1 score']
@@ -60,7 +60,7 @@
     const chartState = { metric: chartMetric?.value || 'quality', view: 'chart' };
     const formatChartValue = (metric, value) => metric === 'quality' ? value.toFixed(4) : `${value.toFixed(2)}%`;
     const chartMetricNames = {
-      quality: 'Quality', dsr: 'DSR', pass3: 'pass@3', all3: 'pass³',
+      quality: 'Quality', dsr: 'DSR', pass3: 'pass@3', all3: 'pass^3',
       recall: 'Recall', precision: 'Precision', askF1: 'Ask-F1'
     };
 
