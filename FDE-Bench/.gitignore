@@ -20,9 +20,8 @@ harness/scoring/extractor_opencode/node_modules/
 .cache/
 case/*/data/
 case/*/tests/data/
-# Case 040 row-level data are withheld pending redistribution confirmation
-case/040_frailty_cohort_analysis/tests/_private/test_outcomes.csv
-case/040_frailty_cohort_analysis/tests/best_solution/trajectory_groups.csv
+# Case 040 inputs are small synthetic files tracked in Git
+!case/040_frailty_cohort_analysis/data/
 
 # Project-page development artifacts
 _preview/

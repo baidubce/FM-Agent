@@ -3,7 +3,7 @@
   "repository": "sponyo531/fde-bench",
   "release_tag": "v0.1.0",
   "total_case_protocols": 49,
-  "available_case_data": 48,
+  "available_case_data": 49,
   "assets": [
     {
       "name": "fde-bench-data-case001.tar.gz",
@@ -26,18 +26,6 @@
       "name": "fde-bench-data-cases002-049.tar.gz",
       "bytes": 253384892,
       "sha256": "d193a4d48057c166c9bc4b5cb9c4603025c34b594fbc00d5d832e355c44e1879"
-    }
-  ],
-  "withheld": [
-    {
-      "case": "040_frailty_cohort_analysis",
-      "reason": "Row-level cohort data and reference outputs withheld pending confirmation of redistribution rights.",
-      "paths": [
-        "case/040_frailty_cohort_analysis/data/followup_outcomes_train.csv",
-        "case/040_frailty_cohort_analysis/data/hrs_cohort.csv",
-        "case/040_frailty_cohort_analysis/tests/_private/test_outcomes.csv",
-        "case/040_frailty_cohort_analysis/tests/best_solution/trajectory_groups.csv"
-      ]
     }
   ],
   "files": [

@@ -2,6 +2,8 @@
 
 从模糊业务需求到可交付方案的 agent 评测基准。
 
+[项目主页](https://baidubce.github.io/FM-Agent/FDE-Bench/) · [论文 (arXiv)](https://arxiv.org/abs/2610.14539) · [案例目录](case/) · [数据下载](DATA.md) · [贡献指南](CONTRIBUTING.md) · [English](README.md)
+
 ## 这是什么
 
 现有 agent 评测集把题目写清楚了——目标函数、约束、数据口径、提交格式全给。
@@ -89,7 +91,15 @@ FDE-bench/
 
 ## 快速开始
 
+需要 Python 3.11+，推荐 Linux + Docker。
+
 ```bash
+git clone https://github.com/baidubce/FM-Agent.git
+cd FM-Agent/FDE-Bench
+python -m pip install -r requirements.txt
+python scripts/fetch_data.py           # 下载并校验案例数据（约 2.9 GB，详见 DATA.md）
+python scripts/fetch_data.py --check   # 核对数据完整性
+
 cp config.toml.example config.toml     # 填端点与模型
 export DELIVER_JUDGE_TOKEN=sk-...      # 澄清判定
 export DELIVER_ANSWERER_TOKEN=sk-...   # 模拟客户
@@ -154,3 +164,23 @@ AGENTS = {"your-agent": make_runner(SPEC)}
 ## 状态
 
 发布包包含 49 个已去敏 case；运行结果默认写入仓库内的 `results/`。
+
+## 许可证
+
+评测数据（`case/` 目录及数据压缩包）采用 [CC BY-NC-ND 4.0](LICENSE-DATA) 许可；harness 等源代码采用 [MIT](LICENSE) 许可。适用范围与第三方说明见 [LICENSE_STATUS.md](LICENSE_STATUS.md)。
+
+## 引用
+
+如果您使用了 FDE-Bench，请引用：
+
+```bibtex
+@misc{li2026fdebench,
+      title={FDE-Bench: Evaluating End-to-End Delivery from Underspecified Real-World Business Requests},
+      author={Huaiming Li and Can Huang and Chufan Wu and Danyu Liu and Xiaomin Yuan and Qinze Li and Yui Lo and Wenhui Bai and Qianlong Wang and Zengle Ge and Xiyu Yan and Yuheng Cheng and Jinhui Ren and Guokai Chen and Jiaqun Liu and Haoran Li and Qianhui Liu and Annan Li and Jianmin Wu and Dawei Yin and Dou Shen},
+      year={2026},
+      eprint={2610.14539},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2610.14539},
+}
+```

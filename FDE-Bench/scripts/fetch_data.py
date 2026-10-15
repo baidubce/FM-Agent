@@ -162,7 +162,7 @@ def check(files: list[dict], root: Path) -> bool:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="Verify restored files without downloading.")
-    parser.add_argument("--list", action="store_true", help="List archives and withheld cases.")
+    parser.add_argument("--list", action="store_true", help="List archives.")
     parser.add_argument("--archive", action="append", type=Path, default=[],
                         help="Use a local archive or archive part; may be repeated.")
     parser.add_argument("--cache-dir", type=Path, default=ROOT / ".cache" / "fde-bench-data")
@@ -191,7 +191,7 @@ def main() -> None:
     for asset in manifest["assets"]:
         path = obtain_archive(asset, base, args.cache_dir.resolve(), local)
         extract(path, asset, manifest["files"], ROOT)
-    print("Data restored. Case 040 remains excluded from this public data release.")
+    print("Data restored. Case 040 inputs are included in the repository.")
 
 
 if __name__ == "__main__":

@@ -25,4 +25,4 @@ The page has no build step and uses only the self-hosted fonts, figures, data, a
 - `data.js` — reported results, case inventory, authors, and paper-linked study data.
 - `assets/` — paper PDF, figures, logo, and self-hosted fonts.
 
-The benchmark release, data-download instructions, license status, and reproducibility checks live in the [`FDE-Bench/`](../../FDE-Bench/) README and [`DATA.md`](https://github.com/baidubce/FM-Agent/blob/main/FDE-Bench/DATA.md). The page labels Case 040 as a protocol whose row-level HRS data are withheld pending redistribution confirmation.
+The benchmark release, data-download instructions, license status, and reproducibility checks live in the [`FDE-Bench/`](../../FDE-Bench/) README and [`DATA.md`](https://github.com/baidubce/FM-Agent/blob/main/FDE-Bench/DATA.md).

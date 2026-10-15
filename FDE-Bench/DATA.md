@@ -15,7 +15,7 @@ The release has two logical archives:
 | Archive | Contents |
 | --- | --- |
 | `fde-bench-data-case001.tar.gz` | Aerodynamic forecasting, case 001; **2,645,224,452 bytes** compressed, uploaded as two parts because it exceeds GitHub's 2 GiB asset limit |
-| `fde-bench-data-cases002-049.tar.gz` | Available external inputs for cases 002–049, excluding case 040; **253,384,892 bytes** compressed |
+| `fde-bench-data-cases002-049.tar.gz` | External inputs for cases 002–049 (case 040 is tracked in Git); **253,384,892 bytes** compressed |
 
 The case 001 archive is uploaded as two parts: `fde-bench-data-case001.tar.gz.part01` (1,610,612,736 bytes) and `fde-bench-data-case001.tar.gz.part02` (1,034,611,716 bytes). An archive that exceeds GitHub's per-asset limit is uploaded as numbered parts. The installer downloads and verifies each part, rejoins them, checks the complete archive, and removes the cached parts after successful joining. It then verifies every extracted file. `data-manifest.json` records the exact filenames, order, byte counts, and SHA-256 checksums.
 
@@ -31,19 +31,12 @@ python scripts/fetch_data.py \
 
 If case 001 is split into parts, pass each part with its own `--archive` argument instead of its complete archive. The installer can combine local files with downloads for any remaining assets.
 
-## Withheld case 040
+## Case 040
 
-`040_frailty_cohort_analysis` describes an analysis of the US Health and Retirement Study (HRS). The following files are not distributed until redistribution rights are confirmed:
-
-- `data/hrs_cohort.csv`
-- `data/followup_outcomes_train.csv`
-- `tests/_private/test_outcomes.csv`
-- `tests/best_solution/trajectory_groups.csv`
-
-Its initial request, full requirements, clarification targets, evaluator, schema, environment, and aggregate reference metric are retained. The public datasets cover **48 cases**, while the paper and the case inventory describe **49**. Runs over all 49 cases require an independently authorized copy of the withheld data; otherwise, exclude case 040 from the run list.
+`040_frailty_cohort_analysis` uses a small synthetic cohort (four CSV files, about 320 KB). Its inputs, held-out outcomes, and reference output are tracked directly in Git under `case/040_frailty_cohort_analysis/` and are not part of the release archives. All **49 cases** have complete data.
 
 ## What changed for distribution
 
 Business values and task definitions were not altered during packaging. Three spreadsheets had document-author metadata removed; worksheet payloads and other workbook entries remain unchanged. Released file checksums refer to those cleaned workbooks. The original local source directory is not modified by this packaging step.
 
-Run outputs, credentials, Python caches, and dependency installations are not included. Case data are subject to the current [license status](LICENSE_STATUS.md); public availability does not imply a new data license.
+Run outputs, credentials, Python caches, and dependency installations are not included. Case data are licensed under [CC BY-NC-ND 4.0](LICENSE-DATA); see [LICENSE_STATUS.md](LICENSE_STATUS.md) for scope and third-party exceptions.

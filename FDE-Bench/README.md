@@ -92,9 +92,9 @@ scripts/                 Data restoration and environment build utilities
 Large inputs are distributed as two GitHub Release archives rather than stored in Git history. A source checkout alone does not contain the complete input data.
 
 - `fde-bench-data-case001.tar.gz`: aerodynamic-forecasting case 001.
-- `fde-bench-data-cases002-049.tar.gz`: external inputs for the other available cases, **excluding case 040**.
+- `fde-bench-data-cases002-049.tar.gz`: external inputs for cases 002–049. Case 040 uses small synthetic files tracked directly in Git.
 
-Case 040 (`frailty_cohort_analysis`) retains its protocol and evaluator, but its row-level cohort data, held-out outcomes, and per-person reference output are withheld pending confirmation of redistribution rights. The downloadable data therefore cover **48 of the 49 benchmark cases**. Do not interpret a run without those files as a model failure.
+The archives and the files in Git together cover all **49 benchmark cases**.
 
 The two archives restore paths under `case/`. See [data release details](DATA.md), including checksums and local-archive installation.
 
@@ -119,7 +119,7 @@ python scripts/fetch_data.py --check
 python -m harness -e smoke --dry-run
 ```
 
-The script verifies archive checksums before extraction and checks restored files against `data-manifest.json`. The smoke dry run requires restored case inputs but does not call a model API. `--check` also reports the deliberately withheld case separately.
+The script verifies archive checksums before extraction and checks restored files against `data-manifest.json`. The smoke dry run requires restored case inputs but does not call a model API.
 
 ### 2. Configure models and credentials
 
@@ -161,7 +161,7 @@ python -m harness \
   --container fde-bench-runner:v1
 ```
 
-Use `-e smoke --container fde-bench-runner:v1` for the predefined eight-condition smoke matrix. `experiments.toml` contains the paper's larger matrices and provider-neutral model identifiers; adapt model routes to your service rather than assuming those endpoints are supplied with the release. The full E1 case list includes withheld case 040, so a complete 49-case reproduction requires its separately authorized data.
+Use `-e smoke --container fde-bench-runner:v1` for the predefined eight-condition smoke matrix. `experiments.toml` contains the paper's larger matrices and provider-neutral model identifiers; adapt model routes to your service rather than assuming those endpoints are supplied with the release.
 
 Results default to `results/`. Completed compatible runs are skipped when resuming. To summarize a result directory:
 
@@ -192,6 +192,20 @@ Listing experiments, validating downloaded release files, and dry-running a matr
 
 ## License and provenance
 
-No open-source or dataset redistribution license has yet been assigned to this release. Public visibility does not itself grant such a license. See [LICENSE_STATUS.md](LICENSE_STATUS.md) for the current status and third-party-data notes. Dependency packages remain subject to their respective licenses.
+The benchmark data (everything under `case/` and the release data archives) are licensed under [CC BY-NC-ND 4.0](LICENSE-DATA). The harness and other source code are licensed under the [MIT License](LICENSE). See [LICENSE_STATUS.md](LICENSE_STATUS.md) for scope and third-party terms. Dependency packages remain subject to their respective licenses.
 
-Please cite the paper linked from the [project page](https://baidubce.github.io/FM-Agent/FDE-Bench/) when discussing the benchmark.
+## Citation
+
+If you use FDE-Bench, please cite:
+
+```bibtex
+@misc{li2026fdebench,
+      title={FDE-Bench: Evaluating End-to-End Delivery from Underspecified Real-World Business Requests},
+      author={Huaiming Li and Can Huang and Chufan Wu and Danyu Liu and Xiaomin Yuan and Qinze Li and Yui Lo and Wenhui Bai and Qianlong Wang and Zengle Ge and Xiyu Yan and Yuheng Cheng and Jinhui Ren and Guokai Chen and Jiaqun Liu and Haoran Li and Qianhui Liu and Annan Li and Jianmin Wu and Dawei Yin and Dou Shen},
+      year={2026},
+      eprint={2610.14539},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2610.14539},
+}
+```

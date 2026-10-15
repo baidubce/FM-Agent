@@ -102,7 +102,7 @@ FM Agent 在无人为干预或调优的情况下，自主达到了最先进的�
 
 本项目遵循 MIT 许可证。详见 [LICENSE](LICENSE) 文件。
 
-FDE-Bench 不适用上述 MIT 许可证：其代码与案例数据位于 [`FDE-Bench/`](FDE-Bench/)，许可状态见 [`FDE-Bench/LICENSE_STATUS.md`](FDE-Bench/LICENSE_STATUS.md)；`docs/FDE-Bench/` 下的论文与图片版权归作者所有，内置字体沿用各自的 OFL 许可。
+FDE-Bench 的 harness 代码同样采用 [MIT](FDE-Bench/LICENSE) 许可证，但其评测数据（`FDE-Bench/case/` 与数据压缩包）采用 [CC BY-NC-ND 4.0](FDE-Bench/LICENSE-DATA) 许可，详见 [`FDE-Bench/LICENSE_STATUS.md`](FDE-Bench/LICENSE_STATUS.md)；`docs/FDE-Bench/` 下的论文与图片版权归作者所有，内置字体沿用各自的 OFL 许可。
 
 ## 联系我们
 
